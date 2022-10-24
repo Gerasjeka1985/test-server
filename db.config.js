@@ -1,10 +1,7 @@
-const mysql = require("mysql");
-
-const conn = mysql.createConnection({
+module.exports = {
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     database: process.env.DB_NAME,
     password: process.env.DB_PASSWORD
-});
-
-module.exports = conn;
+};
+//Данные для подкл. к бд

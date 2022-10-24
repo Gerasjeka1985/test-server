@@ -1,13 +1,9 @@
-const express = require("express");
 const Router = require("express");
-
 const router = new Router();
+const goodsRoutes = require("./goodsRoutes");
+const usersRoutes =  require("./usersRoutes");
 
-router.get(`/test`,(req,res) => {
-    res.json("Hello Geka");
-} )
-
-
-// можно достучяться по адресу http://localhost:9100/api/static/img.jpg
+router.use('/goods', goodsRoutes)
+router.use('/users', usersRoutes)
 
 module.exports = router;
