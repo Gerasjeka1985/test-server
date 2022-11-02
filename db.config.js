@@ -1,7 +1,15 @@
-module.exports = {
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    database: process.env.DB_NAME,
-    password: process.env.DB_PASSWORD
-};
-//Данные для подкл. к бд
+const { Sequelize } = require('sequelize');
+//импорт sequelize
+
+module.exports = new Sequelize(
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PASSWORD,
+    {
+        dialect: "mysql",
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT
+    }
+)
+
+

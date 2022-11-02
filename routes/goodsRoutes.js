@@ -3,7 +3,9 @@ const router = new Router();
 const goodController = require("../Controllers/goodsController");
 
 router.get('/', goodController.getAll)
+router.get('/:name', goodController.getOne)
 router.post('/', goodController.create)
-router.get('/:id', goodController.getOne)
+router.delete('/', goodController.delItem)
+
 
 module.exports = router;
